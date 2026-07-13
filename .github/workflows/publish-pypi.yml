@@ -1,0 +1,46 @@
+# Publish to PyPI when a GitHub Release is published.
+#
+# Auth: Trusted Publishing (OIDC). Configure the PyPI project to trust this
+# GitHub repo + workflow. Do NOT set PYPI_API_TOKEN when using OIDC.
+# Docs: https://docs.pypi.org/trusted-publishers/
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install build
+        run: |
+          python -m pip install --upgrade pip build
+
+      - name: Build package
+        run: python -m build
+
+      - name: Verify wheel includes fortune_sheet.jsx
+        run: |
+          python - <<'PY'
+          import glob, zipfile
+          wheels = glob.glob("dist/*.whl")
+          assert wheels, "no wheel built"
+          names = zipfile.ZipFile(wheels[0]).namelist()
+          assert "reflex_fortune_sheet/fortune_sheet.jsx" in names, names
+          print("OK: jsx packaged in", wheels[0])
+          PY
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
