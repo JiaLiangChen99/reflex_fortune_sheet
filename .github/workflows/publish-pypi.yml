@@ -1,8 +1,8 @@
 # Publish to PyPI when a GitHub Release is published.
 #
-# Auth: Trusted Publishing (OIDC). Configure the PyPI project to trust this
-# GitHub repo + workflow. Do NOT set PYPI_API_TOKEN when using OIDC.
-# Docs: https://docs.pypi.org/trusted-publishers/
+# Auth: repository secret PYPI_API_TOKEN (PyPI API token, typically starts with pypi-).
+# Create at https://pypi.org/manage/account/token/ and add under
+# GitHub → Settings → Secrets and variables → Actions → PYPI_API_TOKEN.
 name: Publish to PyPI
 
 on:
@@ -11,12 +11,10 @@ on:
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: pypi
     steps:
       - uses: actions/checkout@v4
 
@@ -44,3 +42,5 @@ jobs:
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
