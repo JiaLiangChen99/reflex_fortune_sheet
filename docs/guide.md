@@ -3,10 +3,16 @@
 ## Installation
 
 ```bash
-pip install -e .   # from this repository
+pip install reflex-fortune-sheet
 ```
 
 Requires Python `>=3.13` and Reflex `>=0.9.6`.
+
+For local development from this repository:
+
+```bash
+pip install -e .
+```
 
 The component declares:
 

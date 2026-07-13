@@ -1,10 +1,13 @@
 # reflex-fortune-sheet
 
+[![PyPI](https://img.shields.io/pypi/v/reflex-fortune-sheet.svg)](https://pypi.org/project/reflex-fortune-sheet/)
+[![Python](https://img.shields.io/pypi/pyversions/reflex-fortune-sheet.svg)](https://pypi.org/project/reflex-fortune-sheet/)
+
 Reflex wrapper for [FortuneSheet](https://ruilisi.github.io/fortune-sheet-docs/guide/) with Excel import/export via [FortuneExcel](https://github.com/Corbe30/FortuneExcel).
 
 Reflex 封装的 FortuneSheet 表格组件，并通过 FortuneExcel 支持 Excel 导入/导出。
 
-[English](#english) · [中文](#中文) · [Framework docs (EN)](docs/README.md)
+[English](#english) · [中文](#中文) · [Framework docs (EN)](docs/README.md) · [PyPI](https://pypi.org/project/reflex-fortune-sheet/)
 
 ---
 
@@ -22,15 +25,24 @@ Reflex 封装的 FortuneSheet 表格组件，并通过 FortuneExcel 支持 Excel
 ### Requirements
 
 - Python `>=3.13`
-- [Reflex](https://reflex.dev) `>=0.9.0`
+- [Reflex](https://reflex.dev) `>=0.9.6`
 
 ### Install
 
 ```bash
-# From this repo (editable)
-pip install -e .
+pip install reflex-fortune-sheet
+```
 
-# Or add as a path / git dependency in your project
+Or with [uv](https://github.com/astral-sh/uv):
+
+```bash
+uv add reflex-fortune-sheet
+```
+
+From this repository (development):
+
+```bash
+pip install -e .
 ```
 
 Frontend packages (`@fortune-sheet/react`, `@corbe30/fortune-excel`) are declared as Reflex `lib_dependencies` and install automatically when the app compiles.
@@ -90,6 +102,9 @@ app.add_page(index)
 ### Run the demo in this repo
 
 ```bash
+git clone https://github.com/JiaLiangChen99/reflex_fortune_sheet.git
+cd reflex_fortune_sheet
+pip install -e .
 reflex run
 ```
 
@@ -120,9 +135,10 @@ Upstream:
 - [FortuneSheet Operation](https://ruilisi.github.io/fortune-sheet-docs/guide/op.html)
 - [FortuneSheet Format](https://ruilisi.github.io/fortune-sheet-docs/guide/sheet.html)
 
-### License
+### Links
 
-See repository license file if present; otherwise treat as project-local until published.
+- PyPI: https://pypi.org/project/reflex-fortune-sheet/
+- Source: https://github.com/JiaLiangChen99/reflex_fortune_sheet
 
 ---
 
@@ -145,10 +161,19 @@ See repository license file if present; otherwise treat as project-local until p
 ### 安装
 
 ```bash
-# 本仓库可编辑安装
-pip install -e .
+pip install reflex-fortune-sheet
+```
 
-# 或在你的项目中以 path / git 依赖引入
+或使用 [uv](https://github.com/astral-sh/uv)：
+
+```bash
+uv add reflex-fortune-sheet
+```
+
+本仓库开发安装：
+
+```bash
+pip install -e .
 ```
 
 前端依赖（`@fortune-sheet/react`、`@corbe30/fortune-excel`）已在组件的 `lib_dependencies` 中声明，应用编译时会自动安装。
@@ -206,6 +231,9 @@ app.add_page(index)
 ### 运行本仓库 Demo
 
 ```bash
+git clone https://github.com/JiaLiangChen99/reflex_fortune_sheet.git
+cd reflex_fortune_sheet
+pip install -e .
 reflex run
 ```
 
@@ -235,3 +263,8 @@ reflex run
 
 - [FortuneSheet Operation](https://ruilisi.github.io/fortune-sheet-docs/guide/op.html)
 - [FortuneSheet 工作表配置](https://ruilisi.github.io/fortune-sheet-docs/guide/sheet.html)
+
+### 链接
+
+- PyPI：https://pypi.org/project/reflex-fortune-sheet/
+- 源码：https://github.com/JiaLiangChen99/reflex_fortune_sheet
