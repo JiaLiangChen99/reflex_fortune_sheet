@@ -1,0 +1,9 @@
+[project]
+name = "reflex-fortune-sheet"
+version = "0.1.0"
+description = "Reflex wrapper for FortuneSheet with Excel import/export (FortuneExcel)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "reflex>=0.9.6.post1",
+]
