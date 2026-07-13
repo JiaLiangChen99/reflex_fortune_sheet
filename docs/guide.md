@@ -6,7 +6,7 @@
 pip install reflex-fortune-sheet
 ```
 
-Requires Python `>=3.13` and Reflex `>=0.9.6`.
+Requires Python `>=3.10` and Reflex `>=0.9.0`.
 
 For local development from this repository:
 

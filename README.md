@@ -24,8 +24,8 @@ Reflex 封装的 FortuneSheet 表格组件，并通过 FortuneExcel 支持 Excel
 
 ### Requirements
 
-- Python `>=3.13`
-- [Reflex](https://reflex.dev) `>=0.9.6`
+- Python `>=3.10`
+- [Reflex](https://reflex.dev) `>=0.9.0`
 
 ### Install
 
@@ -155,8 +155,8 @@ Upstream:
 
 ### 环境要求
 
-- Python `>=3.13`
-- [Reflex](https://reflex.dev) `>=0.9.6`
+- Python `>=3.10`
+- [Reflex](https://reflex.dev) `>=0.9.0`
 
 ### 安装
 
